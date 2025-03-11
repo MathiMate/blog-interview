@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Skeleton from '../components/Utils/Skeleton';
+import Toastify from 'toastify-js';
 
 interface Post {
   id: number;
@@ -64,6 +65,18 @@ export default function PostsPage() {
       .then((response) => {
         if (!response.ok) throw new Error('Failed to delete');
         setPosts(posts.filter((post) => post.id !== id));
+        Toastify({
+          text: 'Post deleted sucessfully',
+          duration: 5000,
+          close: true,
+          gravity: 'top',
+          position: 'right',
+          stopOnFocus: true,
+          style: {
+            background: 'linear-gradient(to right, #00b09b, #96c93d)',
+          },
+          className: 'toast',
+        }).showToast();
       })
       .catch(() => setError('Failed to delete post'));
   }
@@ -81,7 +94,10 @@ export default function PostsPage() {
               key={post.id}
               className="flex flex-col border p-6 rounded-xl shadow-lg bg-white hover:shadow-xl transition card"
             >
-              <a href={`/posts/${post.id}`} className='hover:scale-105 transition'>
+              <a
+                href={`/posts/${post.id}`}
+                className="hover:scale-105 transition"
+              >
                 <h2 className="font-bold text-gray-600 text-lg mb-2 textOverflow">
                   {post.title}
                 </h2>

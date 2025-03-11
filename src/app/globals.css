@@ -34,6 +34,21 @@ body {
   text-overflow: ellipsis;
 }
 
+.toast {
+  position: absolute;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  & > button {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 @view-transition {
   fadeslide: auto;
 }

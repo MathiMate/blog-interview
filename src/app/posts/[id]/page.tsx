@@ -2,6 +2,7 @@
 import Skeleton from '@/app/components/Utils/Skeleton';
 import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import Toastify from 'toastify-js';
 
 interface Post {
   id: number;
@@ -50,10 +51,21 @@ export default function PostPage() {
       .then((response) => {
         if (!response.ok) throw new Error('Failed to delete');
         setPost(post?.id === id ? null : post);
-      })
-      .then(() => {
+        Toastify({
+          text: 'Post deleted sucessfully',
+          duration: 5000,
+          close: true,
+          gravity: 'top',
+          position: 'right',
+          stopOnFocus: true,
+          style: {
+            background: 'linear-gradient(to right, #00b09b, #96c93d)',
+          },
+          className: 'toast',
+        }).showToast();
         router.push('/');
       })
+      // .then(() => {})
       .catch(() => setError('Failed to delete post'));
   }
 

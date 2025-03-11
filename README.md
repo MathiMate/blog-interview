@@ -3,6 +3,7 @@
 > Here, I will list the steps I followed to create the project.
 >
 > I started with ESLint and Prettier for formatting because they're the best tools for a programmer.
+> Inmediatly I dealeted caret ^ from dependencies cause' it's not a good pactice.
 > After that, I created error and not-found components just in case. I think it's a good practice.
 > And now we have the hardest task: creating the database. I had to read the documentation and ask AI for advice because I had never used Prisma before. Very cool, by the way.
 > For the seed, it was very easy. I've applied web scraping techniques on my website a few times.
@@ -11,7 +12,7 @@
 > Well, for an EVEN BETTER user experience, I added pagination. Also if we click on a post, we'll see the unique post and a "Go back home" button.
 > If we delete a post from the unique post view, it will be deleted, and we'll automatically return home.
 > And if we enter a wrong URL, the not-found component will appear.
-> Finally, I added a skeleton UI to make everything look prettier.
+> Finally, I added a skeleton UI to make everything look prettier and Toastify dependencie to notify to the user that a post has been deleted.
 
 > [!IMPORTANT]
 >

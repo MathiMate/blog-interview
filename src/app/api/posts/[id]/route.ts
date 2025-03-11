@@ -8,10 +8,8 @@ export async function GET(
   { params }: { params: { id: string } },
 ) {
   try {
-    const postId = Number(params.id);
-
     const post = await prisma.post.findUnique({
-      where: { id: postId },
+      where: { id: Number((await params).id) },
       include: { user: true },
     });
 
@@ -35,7 +33,7 @@ export async function DELETE(
 ) {
   try {
     await prisma.post.delete({
-      where: { id: parseInt(params.id) },
+      where: { id: Number((await params).id) },
     });
 
     return NextResponse.json({ message: 'Post deleted' });
