@@ -71,33 +71,34 @@ export default function PostsPage() {
   return (
     <div className="container mx-auto p-4 flex items-center justify-center flex-wrap w-full flex-col">
       <h1 className="text-2xl font-bold mb-4">Posts</h1>
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="text-red-500 font-bold text-4xl">{error}</p>}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl mx-auto">
         {loading && !posts.length ? (
           <Skeleton arrayLength={9} />
         ) : (
           posts.map((post) => (
-            <a
+            <div
               key={post.id}
-              href={`/posts/${post.id}`}
               className="flex flex-col border p-6 rounded-xl shadow-lg bg-white hover:shadow-xl transition card"
             >
-              <h2 className="font-bold text-gray-600 text-lg mb-2 textOverflow">
-                {post.title}
-              </h2>
-              <p className="text-gray-600 mb-2 max-h-80">{post.body}</p>
+              <a href={`/posts/${post.id}`} className='hover:scale-105 transition'>
+                <h2 className="font-bold text-gray-600 text-lg mb-2 textOverflow">
+                  {post.title}
+                </h2>
+                <p className="text-gray-600 mb-2 max-h-80">{post.body}</p>
+              </a>
               <div className="flex justify-between items-center mt-auto">
                 <span className="text-gray-500 text-sm">
                   By {post.userName}
                 </span>
                 <button
-                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition z-20 hover:cursor-pointer"
+                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition z-20 hover:cursor-pointer hover:scale-105"
                   onClick={() => deletePost(post.id)}
                 >
                   Delete
                 </button>
               </div>
-            </a>
+            </div>
           ))
         )}
       </div>

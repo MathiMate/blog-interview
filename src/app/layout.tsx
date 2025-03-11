@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-     <html lang="en" suppressHydrationWarning>
-      <body style={{ viewTransitionName: "fadeSlide" }}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body style={{ viewTransitionName: 'fadeSlide' }}>{children}</body>
     </html>
   );
 }
