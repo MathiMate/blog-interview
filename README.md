@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+> [!NOTE]
+>
+> <h2>## 📄 APP Detail</h2>
 
-## Getting Started
+> We would like to build a web app using TypeScript (TS) for the frontend and the backend. Because of that, we have decided that a technology like NextJS seems like a perfect match for our needs. It provides a lot of functionality for developers and is a “production-ready” framework.
 
-First, run the development server:
+> The application we are trying to build allows users to list posts from an API and allows the users to filter the posts by the userId of whoever wrote the post. The users of the application you are building usually travel a lot and are in places with bad or unstable internet connections and because of that we want to add some features that allow users to have a better experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> Step 1 - Setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> Create an application using NextJS and upload it to a public repository in GitHub. If you prefer a private repository you need to request the usernames of the evaluation team. Ensure a file named assumptions.md is placed at the project's root to detail all presumed factors during development.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> Step 2 - Database
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> We will need to use a database for this project. We suggest using Prisma ORM with SQLite.
 
-## Learn More
+> Create the necessary tables for a blog where several users can post several posts. You can use the data from these APIs to seed the tables https://jsonplaceholder.typicode.com/users https://jsonplaceholder.typicode.com/posts. The seeding script must be included in the solution.
 
-To learn more about Next.js, take a look at the following resources:
+> Important: Please put the database connection details in the .env file and push it to the repository. This is a bad practice but will make it easier for us to run the project locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Step 3 - Posts listing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> Create a /posts page that lists all the posts returned by the database. For the UI, use a list of “card” elements. You can see some examples at https://tailwindcss.com/ (but you don’t need to use TailwindCSS if you don’t want to)
 
-## Deploy on Vercel
+> Step 4 - Post deletion
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> Each post can be deleted. Add a button to each card to allow the posts to be deleted. When you click the “Delete” button a modal or dialog should appear asking for confirmation.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> Step 5 - Error handling
+
+> When the endpoint fails to retrieve the posts or it fails to delete an error should be shown to the user.
+
+> [!IMPORTANT]
+
+> <h2>## Getting Started</h2>
+
+> First, run the development server:
+
+> ```bash
+> npm run dev
+> # or
+> yarn dev
+> # or
+> pnpm dev
+> # or
+> bun dev
+> ```
+
+> Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+> [!TIP]
+> Here we have no Tips but i will let the steps that I follow to create the proyect
